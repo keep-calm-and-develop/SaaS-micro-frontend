@@ -1,90 +1,92 @@
-AWS Setup and Configuration Cheetsheet
+# AWS Setup and Configuration Cheetsheet
+
 This lecture note is not intended to be a replacement for the videos, but to serve as a cheat sheet for students who want to quickly run thru the AWS configuration steps or easily see if they missed a step. It will also help navigate through the changes to the AWS UI since the course was recorded.
 
-S3 Bucket Creation and Configuration
+## S3 Bucket Creation and Configuration
+
 Go to AWS Management Console and use the search bar to find S3
 
-Click Create Bucket
+- Click Create Bucket
 
-Specify an AWS Region
+- Specify an AWS Region
 
-Provide unique Bucket Name and click Create Bucket
+- Provide unique Bucket Name and click Create Bucket
 
-Click the new Bucket you have created from the Bucket list.
+- Click the new Bucket you have created from the Bucket list.
 
-Select Properties
+- Select Properties
 
-Scroll down to Static website hosting and click Edit
+- Scroll down to Static website hosting and click Edit
 
-Change to Enable
+- Change to Enable
 
-Enter index.html in the Index document field
+- Enter index.html in the Index document field
 
-Click Save changes
+- Click Save changes
 
-Select Permissions
+- Select Permissions
 
-Click Edit in Block all public access
+- Click Edit in Block all public access
 
-Untick the Block all public access box.
+- Untick the Block all public access box.
 
-Click Save changes
+- Click Save changes
 
-Type confirm in the field and click Confirm
+- Type confirm in the field and click Confirm
 
-Find the Bucket Policy and click Edit
+- Find the Bucket Policy and click Edit
 
-Click Policy generator
+- Click Policy generator
 
-Change Policy type to S3 Bucket Policy
+- Change Policy type to S3 Bucket Policy
 
-Set Principle to *
+- Set Principle to *
 
-Set Action to Get Object
+- Set Action to Get Object
 
-Copy the S3 bucket ARN to add to the ARN field and add /* to the end.
+- Copy the S3 bucket ARN to add to the ARN field and add /*to the end.
 eg: arn:aws:s3:::mfe-dashboard/*
 
-Click Add Statement
+- Click Add Statement
 
-Click Generate Policy
+- Click Generate Policy
 
-Copy paste the generated policy text to the Policy editor
+- Copy paste the generated policy text to the Policy editor
 
-Click Save changes
+- Click Save changes
 
+## CloudFront setup
 
-CloudFront setup
 Go to AWS Management Console and use the search bar to find CloudFront
 
-Click Create distribution
+- Click Create distribution
 
-Set Origin domain to your S3 bucket
+- Set Origin domain to your S3 bucket
 
-Find the Default cache behavior section and change Viewer protocol policy to Redirect HTTP to HTTPS
+- Find the Default cache behavior section and change Viewer protocol policy to Redirect HTTP to HTTPS
 
-Scroll down and click Create Distribution
+- Scroll down and click Create Distribution
 
-After Distribution creation has finalized click the Distribution from the list, find its Settings and click Edit
+- After Distribution creation has finalized click the Distribution from the list, find its Settings and click Edit
 
-Scroll down to find the Default root object field and enter /container/latest/index.html
+- Scroll down to find the Default root object field and enter /container/latest/index.html
 
-Click Save changes
+- Click Save changes
 
-Click Error pages
+- Click Error pages
 
-Click Create custom error response
+- Click Create custom error response
 
-Change HTTP error code to 403: Forbidden
+- Change HTTP error code to 403: Forbidden
 
-Change Customize error response to Yes
+- Change Customize error response to Yes
 
-Set Response page path to /container/latest/index.html
+- Set Response page path to /container/latest/index.html
 
-Set HTTP Response Code to 200: OK
+- Set HTTP Response Code to 200: OK
 
+## Create IAM user
 
-Create IAM user
 1. Search for "IAM"
 
 2. Click "Create Individual IAM Users" and click "Manage Users"
