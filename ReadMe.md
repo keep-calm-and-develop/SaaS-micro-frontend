@@ -1,17 +1,17 @@
 # SaaS Micro-frontend
 
-POC of SaaS app built on micro frontend architecture. Click here for working [Demo](href="d590t91pbdhdo.cloudfront.net/").
+POC of SaaS app built on micro frontend architecture. Click here for a working [demo](https://d590t91pbdhdo.cloudfront.net/).
 
-## This application consist of 4 separate frontend applications
+## This application consists of 4 separate frontend applications
 
 - Container (Main app to integrate others along with common Navigation)
-- Marketing (Landing page for whole app)
-- Authentication (Includes Signin and signup)
+- Marketing (Landing page for the whole app)
+- Authentication (Includes Sign in and signup)
 - Dashboard (Home page for authentication user)
 
 ## Installation
 
-To install dependecies on each application
+To install dependencies on each application
 
 ```bash
 npm install
